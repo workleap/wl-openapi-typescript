@@ -10,7 +10,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, idp]
     outputs:
       published: ${{ steps.changesets.outputs.published }}
     permissions:
@@ -39,3 +39,5 @@ jobs:
     with:
       environment: 'release'
     secrets: inherit
+
+
