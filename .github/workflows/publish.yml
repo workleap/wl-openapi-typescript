@@ -7,16 +7,17 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+permissions:
+    id-token: write # OIDC for npm Trusted Publishing
+    contents: write
+    pull-requests: write
+
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
     outputs:
       published: ${{ steps.changesets.outputs.published }}
-    permissions:
-      id-token: write # required for provenance https://docs.npmjs.com/generating-provenance-statements#publishing-packages-with-provenance-via-github-actions
-      contents: write
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
 
