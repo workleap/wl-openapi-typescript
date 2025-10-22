@@ -34,6 +34,7 @@
     "scripts": {
         "dev": "tsup --config tsup.dev.ts",
         "test": "vitest",
+        "test-update": "vitest -- update-snapshots",
         "build": "tsup --config tsup.build.ts"
     },
     "devDependencies": {
