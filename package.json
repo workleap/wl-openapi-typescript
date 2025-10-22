@@ -13,6 +13,7 @@
         "postinstall": "pnpm -r --parallel --include-workspace-root exec pnpm dlx rimraf node_modules/.cache",
         "dev": "pnpm --filter \"./packages/**\" -r dev",
         "test": "pnpm --filter \"./packages/**\" -r test",
+        "test-update": "pnpm --filter \"./packages/**\" -r test-update",
         "build": "pnpm --filter \"./packages/**\" -r build",
         "lint": "pnpm run \"/^lint:.*/\"",
         "lint:eslint": "eslint --ext .js,.ts,.tsx . --max-warnings=-1 --cache --cache-location node_modules/.cache/eslint",
@@ -33,6 +34,7 @@
         "typescript": "5.5.3"
     },
     "engines": {
-        "node": ">=18.0.0"
-    }
+        "node": ">=24.0.0"
+    },
+    "packageManager": "pnpm@10.19.0"
 }
