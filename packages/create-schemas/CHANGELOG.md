@@ -1,5 +1,11 @@
 # @workleap/create-schemas
 
+## 0.3.1
+
+### Patch Changes
+
+- [#48](https://github.com/workleap/wl-openapi-typescript/pull/48) [`076b09d`](https://github.com/workleap/wl-openapi-typescript/commit/076b09d0e1c9a6c69aa8dc0a085ebfee11981928) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Update NPM publishing to use OIDC authentication
+
 ## 0.3.0
 
 ### Minor Changes
