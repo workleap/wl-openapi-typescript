@@ -19,18 +19,26 @@ export function typesPlugin(): Plugin {
 
             const ast = stringToAST(code) as ts.Node[];
 
+            // Collect names of all enum declarations to avoid generating duplicate type aliases
+            const existingEnums = new Set(
+                ast
+                    .filter(node => ts.isEnumDeclaration(node))
+                    .map(node => (node as ts.EnumDeclaration).name.text)
+            );
+
             const componentsDeclaration = ast.find(isComponentsInterfaceDeclaration);
 
             assert(componentsDeclaration, "Missing components declaration");
             const schema = componentsDeclaration.members.find(isComponentsSchema);
             assert(schema, "Missing components declaration");
             assert(schema.type && ts.isTypeLiteralNode(schema.type), "Invalid schema type");
-        
+
             const typeNodes = schema.type.members
                 .map(member => member.name)
                 .filter(name => name !== undefined)
                 .filter(name => ts.isStringLiteral(name) || ts.isIdentifier(name))
                 .map(name => name.text)
+                .filter(name => !existingEnums.has(toSafeName(name)))
                 .map(name => {
                     if (RESERVED_IDENTIFIERS.has(name)) {
                         throw new Error(`Invalid schema name: ${name}`);
