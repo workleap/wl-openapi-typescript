@@ -1,5 +1,11 @@
 # @workleap/create-schemas
 
+## 0.3.2
+
+### Patch Changes
+
+- [#53](https://github.com/workleap/wl-openapi-typescript/pull/53) [`c68c022`](https://github.com/workleap/wl-openapi-typescript/commit/c68c022d433d91425586e82a5818d9884eaa6ce9) Fix duplicate type alias generation for enum declarations with special characters. The `toSafeName` function now uses PascalCase transformation to match `openapi-typescript`'s enum naming convention, ensuring that enums with hyphens, dots, or other special characters (e.g., `"user-status"` → `UserStatus`) are correctly filtered out when generating type aliases.
+
 ## 0.3.1
 
 ### Patch Changes
