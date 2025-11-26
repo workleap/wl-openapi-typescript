@@ -66,4 +66,4 @@ Array of plugins to use. See [Using Plugins](./using-plugins) for more details.
 Options passed to OpenAPI TypeScript for type generation. You normally should
 not have to change them.
 
-[!ref target="blank" text="See OpenAPI TypeScript options"](https://openapi-ts.pages.dev/cli#flags)
+[!ref target="blank" text="See OpenAPI TypeScript options"](https://openapi-ts.dev/cli#flags)

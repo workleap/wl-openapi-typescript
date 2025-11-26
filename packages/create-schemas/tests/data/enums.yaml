@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: Enum Test API
+  version: 1.0.0
+paths:
+  /test:
+    get:
+      responses:
+        '200':
+          description: Success
+components:
+  schemas:
+    Status:
+      type: string
+      enum:
+        - active
+        - inactive
+        - pending
+    Priority:
+      type: string
+      enum:
+        - low
+        - medium
+        - high
+    user-status:
+      type: string
+      enum:
+        - online
+        - offline
+        - away
+    task.priority:
+      type: string
+      enum:
+        - urgent
+        - normal
+        - low-priority
+    Task:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          $ref: '#/components/schemas/Status'
+        priority:
+          $ref: '#/components/schemas/Priority'
+        userStatus:
+          $ref: '#/components/schemas/user-status'
+        taskPriority:
+          $ref: '#/components/schemas/task.priority'
+        name:
+          type: string

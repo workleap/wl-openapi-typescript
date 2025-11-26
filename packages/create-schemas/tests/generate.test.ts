@@ -19,8 +19,8 @@ describe.concurrent("generate", () => {
         expect(typesFile.code).toMatch("export type User");
         expect(typesFile.code).toMatch("export type User_1");
         expect(typesFile.code).toMatch("export type User_Name");
-        expect(typesFile.code).toMatch("export type username");
-        expect(typesFile.code).toMatch("export type myorgUser");
+        expect(typesFile.code).toMatch("export type UserName");
+        expect(typesFile.code).toMatch("export type MyOrgUser");
     });
 
     test("reject ambiguous names", async ({ expect }) => {
