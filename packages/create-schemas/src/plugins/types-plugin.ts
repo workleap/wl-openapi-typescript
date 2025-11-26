@@ -76,33 +76,51 @@ export function isComponentsSchema(node: ts.Node): node is ts.PropertySignature 
  * OpenAPI field names must match `^[a-zA-Z0-9\.\-_]+$` which allows names that
  * are not valid JavaScript/TypeScript identifiers. This function converts an
  * unsafe name into a safe name that can be used as a JavaScript/TypeScript
- * identifier.
+ * identifier using PascalCase transformation to match openapi-typescript's enum naming.
  */
 export function toSafeName(unsafeName: string): string {
     let safeName = "";
+    let capitalizeNext = true;
+
     for (const char of unsafeName) {
         const charCode = char.charCodeAt(0);
+
+        // Special characters that should trigger capitalization of next char
+        if (char === "-" || char === "." || char === " ") {
+            capitalizeNext = true;
+            continue;
+        }
 
         // A-Z
         if (charCode >= 65 && charCode <= 90) {
             safeName += char;
+            capitalizeNext = false;
+            continue;
         }
 
         // a-z
         if (charCode >= 97 && charCode <= 122) {
-            safeName += char;
-        }
-
-        if (char === "_" || char === "$") {
-            safeName += char;
+            safeName += capitalizeNext ? char.toUpperCase() : char;
+            capitalizeNext = false;
+            continue;
         }
 
         // 0-9
         if (safeName.length > 0 && charCode >= 48 && charCode <= 57) {
             safeName += char;
+            capitalizeNext = false;
+            continue;
         }
 
-        continue;
+        // _ and $ are valid identifier characters
+        if (char === "_" || char === "$") {
+            safeName += char;
+            capitalizeNext = false;
+            continue;
+        }
+
+        // Any other character triggers capitalization of next char but is not included
+        capitalizeNext = true;
     }
 
     return safeName;

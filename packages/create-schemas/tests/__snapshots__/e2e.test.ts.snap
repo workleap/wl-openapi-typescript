@@ -44,10 +44,16 @@ export interface components {
         Status: Status;
         /** @enum {string} */
         Priority: Priority;
+        /** @enum {string} */
+        "user-status": UserStatus;
+        /** @enum {string} */
+        "task.priority": TaskPriority;
         Task: {
             id?: string;
             status?: components["schemas"]["Status"];
             priority?: components["schemas"]["Priority"];
+            userStatus?: components["schemas"]["user-status"];
+            taskPriority?: components["schemas"]["task.priority"];
             name?: string;
         };
     };
@@ -67,6 +73,16 @@ export enum Priority {
     low = "low",
     medium = "medium",
     high = "high"
+}
+export enum UserStatus {
+    online = "online",
+    offline = "offline",
+    away = "away"
+}
+export enum TaskPriority {
+    urgent = "urgent",
+    normal = "normal",
+    low_priority = "low-priority"
 }
 export type operations = Record<string, never>;
 

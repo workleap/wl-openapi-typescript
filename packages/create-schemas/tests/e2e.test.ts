@@ -149,15 +149,21 @@ describe.concurrent("e2e", () => {
             const typesFile = result.find(file => file.filename === openapiTypeScriptFilename);
             assert(typesFile);
 
-            // Verify enums are generated
+            // Verify enums are generated (including those with special characters)
             expect(typesFile.code).toContain("export enum Status");
             expect(typesFile.code).toContain("export enum Priority");
+            expect(typesFile.code).toContain("export enum UserStatus");
+            expect(typesFile.code).toContain("export enum TaskPriority");
 
             // Verify NO duplicate type aliases for enums
             const statusTypeAliasRegex = /export type Status = components\["schemas"\]\["Status"\];/;
             const priorityTypeAliasRegex = /export type Priority = components\["schemas"\]\["Priority"\];/;
+            const userStatusTypeAliasRegex = /export type UserStatus = components\["schemas"\]\["user-status"\];/;
+            const taskPriorityTypeAliasRegex = /export type TaskPriority = components\["schemas"\]\["task\.priority"\];/;
             expect(typesFile.code).not.toMatch(statusTypeAliasRegex);
             expect(typesFile.code).not.toMatch(priorityTypeAliasRegex);
+            expect(typesFile.code).not.toMatch(userStatusTypeAliasRegex);
+            expect(typesFile.code).not.toMatch(taskPriorityTypeAliasRegex);
 
             // Verify non-enum types still get type aliases
             expect(typesFile.code).toContain('export type Task = components["schemas"]["Task"];');

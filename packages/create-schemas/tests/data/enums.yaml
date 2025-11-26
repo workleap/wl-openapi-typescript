@@ -22,6 +22,18 @@ components:
         - low
         - medium
         - high
+    user-status:
+      type: string
+      enum:
+        - online
+        - offline
+        - away
+    task.priority:
+      type: string
+      enum:
+        - urgent
+        - normal
+        - low-priority
     Task:
       type: object
       properties:
@@ -31,5 +43,9 @@ components:
           $ref: '#/components/schemas/Status'
         priority:
           $ref: '#/components/schemas/Priority'
+        userStatus:
+          $ref: '#/components/schemas/user-status'
+        taskPriority:
+          $ref: '#/components/schemas/task.priority'
         name:
           type: string
