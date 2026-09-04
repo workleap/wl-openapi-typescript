@@ -126,6 +126,7 @@ export interface components {
             status?: number | null;
             detail?: string | null;
             instance?: string | null;
+        } & {
             [key: string]: unknown;
         };
     };
@@ -211,6 +212,7 @@ export interface components {
             status?: number | null;
             detail?: string | null;
             instance?: string | null;
+        } & {
             [key: string]: unknown;
         };
     };
@@ -296,6 +298,7 @@ export interface components {
             status?: number | null;
             detail?: string | null;
             instance?: string | null;
+        } & {
             [key: string]: unknown;
         };
     };
@@ -1121,7 +1124,7 @@ export interface operations {
                 };
                 content: {
                     "application/json": {
-                        [key: string]: number | undefined;
+                        [key: string]: number;
                     };
                 };
             };
