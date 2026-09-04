@@ -1,0 +1,11 @@
+﻿# Home
+
+> @workleap/create-schemas is a library for generating client code from OpenAPI Specifications.
+
+- [Home](https://workleap.github.io/wl-openapi-typescript/index.md): Home
+- [Getting Started](https://workleap.github.io/wl-openapi-typescript/getting-started.md): In your project, you can install the create-schemas CLI using:
+- [Command Line Interface](https://workleap.github.io/wl-openapi-typescript/cli.md): Options passed to the CLI will always take precedence over options declared in the config file.
+- [Configuration](https://workleap.github.io/wl-openapi-typescript/configuration.md): When running create-schemas from the command line, it will automatically try to resolve a config file named create-schemas.config.ts inside project root (other JS and TS extensions are also supported).
+- [Using Plugins](https://workleap.github.io/wl-openapi-typescript/using-plugins.md): @workleap/create-schemas can be extended using plugins. Plugins can be used to ouput new files or modify files created by other plugins.
+- [JavaScript API](https://workleap.github.io/wl-openapi-typescript/javascript-api.md): The JavaScript API allows you to use the features of @workleap/create-schemas in any Node.js script.
+- [Mock Service Worker](https://workleap.github.io/wl-openapi-typescript/msw.md): The experimental_openapiMSWPlugin plugin allows you to define MSW handlers in a type-safe way.

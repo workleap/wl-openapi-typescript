@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://workleap.github.io/wl-openapi-typescript/</loc>
+    <lastmod>2026-09-04T10:16:56Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workleap.github.io/wl-openapi-typescript/getting-started/</loc>
+    <lastmod>2026-09-04T10:16:56Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workleap.github.io/wl-openapi-typescript/using-plugins/</loc>
+    <lastmod>2026-09-04T10:16:56Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workleap.github.io/wl-openapi-typescript/cli/</loc>
+    <lastmod>2026-09-04T10:16:56Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workleap.github.io/wl-openapi-typescript/javascript-api/</loc>
+    <lastmod>2026-09-04T10:16:56Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workleap.github.io/wl-openapi-typescript/configuration/</loc>
+    <lastmod>2026-09-04T10:16:56Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workleap.github.io/wl-openapi-typescript/msw/</loc>
+    <lastmod>2026-09-04T10:16:56Z</lastmod>
+  </url>
+</urlset>
