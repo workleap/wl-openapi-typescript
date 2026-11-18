@@ -26,12 +26,12 @@
         "changeset:publish": "pnpm run build && changeset publish"
     },
     "devDependencies": {
-        "@changesets/changelog-github": "0.5.0",
-        "@changesets/cli": "2.27.7",
-        "@workleap/eslint-plugin": "3.2.2",
-        "@workleap/typescript-configs": "3.0.2",
-        "eslint": "8.57.0",
-        "typescript": "5.5.3"
+        "@changesets/changelog-github": "0.7.0",
+        "@changesets/cli": "2.31.1",
+        "@workleap/eslint-plugin": "3.5.0",
+        "@workleap/typescript-configs": "3.0.7",
+        "eslint": "8.57.1",
+        "typescript": "5.9.3"
     },
     "engines": {
         "node": ">=24.0.0"
